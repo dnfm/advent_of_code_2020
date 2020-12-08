@@ -24,13 +24,7 @@ while ( 1 ) {
 
     my ( $command, $argument ) = split m{\s+}, $instruction;
 
-    my $action = $commands{ $command };
-
-    if ( !defined $action ) {
-        $ptr++;
-
-        next;
-    }
+    my $action = $commands{ $command } // sub { $ptr++ };
 
     $action->( $argument );
 
