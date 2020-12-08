@@ -17,7 +17,7 @@ for my $to_change ( 1 .. @instructions ) {
     my $accumulator_when_it_ends = gets_out( @instructions );
 
     die "Changing the $to_change(th|st|rd) instruction let the program end "
-      . "with accumulator of $accumulator_when_it_ends " . "when it ends!\n"
+      . "with accumulator of $accumulator_when_it_ends when it ends!\n"
       if defined $accumulator_when_it_ends;
 }
 
